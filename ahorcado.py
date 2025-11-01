@@ -1,4 +1,4 @@
-muñeco_ahorcado_fases = [
+muñeco_hombre_ahorcado_fases = [
     """
      -----
      |   |
@@ -52,37 +52,199 @@ muñeco_ahorcado_fases = [
     / \  |
          |
     =========
+    """,
     """
+     -----
+     |   |
+    \    |
+     O   |
+    /|\  |
+    / \  |
+         |
+    =========
+    """,
+    """
+     -----
+     |   |
+    \|   |
+     O   |
+    /|\  |
+    / \  |
+         |
+    =========
+    """,
+    """
+     -----
+     |   |
+    \|/  |
+     O   |
+    /|\  |
+    / \  |
+         |
+    =========
+    """,
     ]
 
-#funcion para el numero de fallos
-def fallos(numero_fallos, palabra_secreta, lista_letras_usadas, contador_letras): 
+muñeca_mujer_ahorcado_fases = [
+    """
+     -----
+     |   |
+     O   |
+         |
+         |
+         |
+    =========
+    """,
+    """
+     -----
+     |   |
+     O   |
+     |   |
+         |
+         |
+    =========
+    """,
+    """
+     -----
+     |   |
+     O   |
+    /|   |
+         |
+         |
+    =========
+    """,
+    """
+     -----
+     |   |
+     O   |
+    /|\  |
+         |
+         |
+    =========
+    """,
+    """
+     -----
+     |   |
+     O   |
+    /|\  |
+    /    |
+         |
+    =========
+    """,
+    """
+     -----
+     |   |
+     O   |
+    /|\  |
+    /_   |
+         |
+    =========
+    """,
+    """
+     -----
+     |   |
+     O   |
+    /|\  |
+    /_\  |
+         |
+         |
+    =========
+    """,
+    """
+     -----
+     |   |
+     O   |
+    /|\  |
+    /_\  |
+    /    |
+         |
+    =========
+    """,
+    """
+     -----
+     |   |
+     O   |
+    /|\  |
+    /_\  |
+    / \  |
+         |
+    =========
+    """,
+    ]
+
+#funcion para el numero de fallos (muñeco hombre)
+def fallos_hombre(numero_fallos, palabra_secreta, lista_letras_usadas, contador_letras): 
     """Mensajes por si el usuario falla las letras"""
     if numero_fallos == 1:
-        print("Ha fallado! Tenga cuidado, ahora el muñeco tiene una cabeza...\n", muñeco_ahorcado_fases[0])
+        print("Ha fallado! Tenga cuidado, ahora el muñeco tiene una cabeza...\n", muñeco_hombre_ahorcado_fases[0])
         print(f"Le quedan {contador_letras-1} letras por adivinar.")
         print(f"\nHa usado estas letras, cuidado con repetirlas! -> {lista_letras_usadas}")
     elif numero_fallos == 2:
-        print("Ha fallado! Tenga cuidado, ahora el muñeco tiene una tronco...\n", muñeco_ahorcado_fases[1])
+        print("Ha fallado! Tenga cuidado, ahora el muñeco tiene una tronco...\n", muñeco_hombre_ahorcado_fases[1])
         print(f"Le quedan {contador_letras-1} letras por adivinar.")
         print(f"\nHa usado estas letras, cuidado con repetirlas! -> {lista_letras_usadas}")
     elif numero_fallos == 3:
-        print("Ha fallado! Tenga cuidado, ahora al muñeco le ha salido un brazo...\n", muñeco_ahorcado_fases[2])
+        print("Ha fallado! Tenga cuidado, ahora al muñeco le ha salido un brazo...\n", muñeco_hombre_ahorcado_fases[2])
         print(f"Le quedan {contador_letras-1} letras por adivinar.")
         print(f"\nHa usado estas letras, cuidado con repetirlas! -> {lista_letras_usadas}")
     elif numero_fallos == 4:
-        print("Ha fallado! Tenga cuidado, ahora el muñeco tiene un brazo mas...\n", muñeco_ahorcado_fases[3])
+        print("Ha fallado! Tenga cuidado, ahora el muñeco tiene un brazo mas...\n", muñeco_hombre_ahorcado_fases[3])
         print(f"Le quedan {contador_letras-1} letras por adivinar.")
         print(f"\nHa usado estas letras, cuidado con repetirlas! -> {lista_letras_usadas}")
     elif numero_fallos == 5:
-        print("Cuidado!! La primera pierna aparece...\n", muñeco_ahorcado_fases[4])
+        print("Cuidado!! La primera pierna aparece...\n", muñeco_hombre_ahorcado_fases[4])
         print(f"Le quedan {contador_letras-1} letras por adivinar.")
         print(f"\nHa usado estas letras, cuidado con repetirlas! -> {lista_letras_usadas}")
     elif numero_fallos == 6:
-        print("Oh noo!! La segunda pierna...\n", muñeco_ahorcado_fases[5])
+        print("Oh noo!! La segunda pierna...\n", muñeco_hombre_ahorcado_fases[5])
         print(f"Le quedan {contador_letras-1} letras por adivinar.")
+    elif numero_fallos == 7:
+        print("Uy!! Le está saliendo...¿pelo?...\n", muñeco_hombre_ahorcado_fases[6])
+        print(f"Le quedan {contador_letras-1} letras por adivinar.")
+    elif numero_fallos == 8:
+        print("Uy!! Le está saliendo...mas pelo...\n", muñeco_hombre_ahorcado_fases[7])
+        print(f"Le quedan {contador_letras-1} letras por adivinar.")
+    elif numero_fallos == 9:
+        print("Yass!! Ya le salio todo el pelo...\n", muñeco_hombre_ahorcado_fases[8])
         print(f"...HA PERDIDO, ha matado a nuestro amigo, la palabra era... '{palabra_secreta}'\n")
-    
+        exit()
+
+#funcion para el numero de fallos (muñeco mujer)
+def fallos_mujer(numero_fallos, palabra_secreta, lista_letras_usadas, contador_letras): 
+    """Mensajes por si el usuario falla las letras"""
+    if numero_fallos == 1:
+        print("Ha fallado! Tenga cuidado, ahora la muñeca tiene una cabeza...\n", muñeca_mujer_ahorcado_fases[0])
+        print(f"Le quedan {contador_letras-1} letras por adivinar.")
+        print(f"\nHa usado estas letras, cuidado con repetirlas! -> {lista_letras_usadas}")
+    elif numero_fallos == 2:
+        print("Ha fallado! Tenga cuidado, ahora la muñeca tiene una tronco...\n", muñeca_mujer_ahorcado_fases[1])
+        print(f"Le quedan {contador_letras-1} letras por adivinar.")
+        print(f"\nHa usado estas letras, cuidado con repetirlas! -> {lista_letras_usadas}")
+    elif numero_fallos == 3:
+        print("Ha fallado! Tenga cuidado, ahora a la muñeca le ha salido un brazo...\n", muñeca_mujer_ahorcado_fases[2])
+        print(f"Le quedan {contador_letras-1} letras por adivinar.")
+        print(f"\nHa usado estas letras, cuidado con repetirlas! -> {lista_letras_usadas}")
+    elif numero_fallos == 4:
+        print("Ha fallado! Tenga cuidado, ahora la muñeca tiene un brazo mas...\n", muñeca_mujer_ahorcado_fases[3])
+        print(f"Le quedan {contador_letras-1} letras por adivinar.")
+        print(f"\nHa usado estas letras, cuidado con repetirlas! -> {lista_letras_usadas}")
+    elif numero_fallos == 5:
+        print("Cuidado!! La muñeca se empieza a vestir...\n", muñeca_mujer_ahorcado_fases[4])
+        print(f"Le quedan {contador_letras-1} letras por adivinar.")
+        print(f"\nHa usado estas letras, cuidado con repetirlas! -> {lista_letras_usadas}")
+    elif numero_fallos == 6:
+        print("Oh noo!! Se sigue vistiendo...\n", muñeca_mujer_ahorcado_fases[5])
+        print(f"Le quedan {contador_letras-1} letras por adivinar.")
+    elif numero_fallos == 7:
+        print("Uy!! Ya se acabo de vestir con su linda faldita...\n", muñeca_mujer_ahorcado_fases[6])
+        print(f"Le quedan {contador_letras-1} letras por adivinar.")
+    elif numero_fallos == 8:
+        print("Uy!! Le está saliendo...una pierna...\n", muñeca_mujer_ahorcado_fases[7])
+        print(f"Le quedan {contador_letras-1} letras por adivinar.")
+    elif numero_fallos == 9:
+        print("Yass!! Le salio la otra pierna...\n", muñeca_mujer_ahorcado_fases[8])
+        print(f"...HA PERDIDO, ha matado a nuestra amiga, la palabra era... '{palabra_secreta}'\n")
+        exit()
 
 
 def ahorcado(palabra_secreta):
@@ -108,7 +270,10 @@ def ahorcado(palabra_secreta):
             numero_fallos += 1
             lista_letras_usadas.append(letra_usuario)
             print("¡Ya había usado esa letra! Fallo extra!!\n")
-            fallos(numero_fallos, palabra_secreta, lista_letras_usadas, contador_letras)
+            if genero_muñeco == "Hombre":
+                fallos_hombre(numero_fallos, palabra_secreta, lista_letras_usadas, contador_letras)
+            if genero_muñeco == "Mujer":
+                fallos_mujer(numero_fallos, palabra_secreta, lista_letras_usadas, contador_letras)
             continue
         letras_usadas.add(letra_usuario)
 
@@ -165,10 +330,15 @@ def ahorcado(palabra_secreta):
             numero_fallos += 1
             numero_intentos -= 1
             lista_letras_usadas.append(letra_usuario)
-            fallos(numero_fallos, palabra_secreta, lista_letras_usadas, contador_letras)
-            if numero_fallos == 6:
+            if genero_muñeco == "Hombre":
+                fallos_hombre(numero_fallos, palabra_secreta, lista_letras_usadas, contador_letras)
+            if genero_muñeco == "Mujer":
+                fallos_mujer(numero_fallos, palabra_secreta, lista_letras_usadas, contador_letras)
+            if numero_fallos == len(muñeco_hombre_ahorcado_fases) or numero_fallos == len(muñeca_mujer_ahorcado_fases):
                 break 
 
     
 if __name__ == "__main__":
+    genero_muñeco = input("Hola querido usuario, elija el género del muñeco! (Hombre/Mujer): ")
+        
     ahorcado(palabra_secreta="botella")
